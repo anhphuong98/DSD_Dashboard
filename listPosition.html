@@ -65,13 +65,13 @@
         <div class="leftside-navigation">
             <ul class="sidebar-menu" id="nav-accordion">
                 <li>
-                    <a class="active" href="index.html">
+                    <a  href="index.html">
                         <i class="fa fa-dashboard"></i>
                         <span>Tổng quan</span>
                     </a>
                 </li>
                  <li>
-                    <a href="listPosition.html">
+                    <a  class="active" href="listPosition.html">
                         <i class="fa fa-user"></i>
                         <span>Quản lý chức vụ</span>
                     </a>
@@ -93,21 +93,9 @@
 <section class="wrapper">
 
 <!--mini statistics start-->
-<div class="row">
-    <div class="col-md-12">
-        <section class="panel">
-            <div class="panel-body">
-                <div class="top-stats-panel">
-                    <h4 class="widget">Biểu đồ thay đổi phòng ban theo tháng</h4>
-                </div>
-            </div>
-        </section>
-    </div>
-</div>
-
 <div class="panel panel-success">
     <div class="panel-heading">
-        <h3 class="panel-title" style="text-align: center">Danh sách nhân viên</h3>
+        <h3 class="panel-title" style="text-align: center">Danh sách chức vụ</h3>
     </div>
     <div class="panel-body">
          <table class="table table-hover">
@@ -116,76 +104,44 @@
                     <th>STT</th>
                     <th>Tên</th>
                     <th>Mô tả</th>
-                    <th>Vị trí</th>
                     <th>Thao tác</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>1</td>
-                    <td>Nguyễn Anh Phương</td>
-                    <td>Nhân viên hành chính</td>
-                    <td>Nhân viên</td>
+                    <td>Giám đốc</td>
+                    <td>Giám đốc của công ty chịu trách nhiệm điều hành chung</td>
                     <td>
                         <p>
-                            <a href="#" class="btn btn-info" role="button">Công việc</a>
-                            <a href="#" class="btn btn-primary" role="button">Chi tiết</a>
-                             <a href="#" class="btn btn-danger" role="button" data-toggle="modal" data-target="#confirm-delete">Xóa</a>
+                            <a href="#" class="btn btn-info" role="button" data-toggle="modal" data-target="#myModal">Sửa</a>
+                            <a href="#" class="btn btn-danger" role="button" data-toggle="modal" data-target="#confirm-delete">Xóa</a>
                         </p>
                     </td>
                 </tr>
-               <tr>
+                <tr>
                     <td>2</td>
-                    <td>Đoàn Văn Tiến</td>
-                    <td>Nhân viên hành chính</td>
-                    <td>Nhân viên</td>
+                    <td>Phó giám đốc</td>
+                    <td>Phó Giám đốc của công ty chịu trách nhiệm hỗ trợ giám đốc trong các công việc</td>
                     <td>
                         <p>
-                            <a href="#" class="btn btn-info" role="button">Công việc</a>
-                            <a href="#" class="btn btn-primary" role="button">Chi tiết</a>
-                             <a href="#" class="btn btn-danger" role="button" data-toggle="modal" data-target="#confirm-delete">Xóa</a>
+                            <a href="#" class="btn btn-info" role="button" data-toggle="modal" data-target="#myModal">Sửa</a>
+                            <a href="#" class="btn btn-danger" role="button" data-toggle="modal" data-target="#confirm-delete">Xóa</a>
                         </p>
                     </td>
                 </tr>
                 <tr>
-                    <td>3</td>
-                    <td>Nguyễn Văn Đạt</td>
-                    <td>Nhân viên hành chính</td>
+                    <td>2</td>
                     <td>Nhân viên</td>
+                    <td>Nhân viên của phòng ban nào đó, làm các công việc được trưởng phóng hay phó trưởng phòng giao</td>
                     <td>
                         <p>
-                            <a href="#" class="btn btn-info" role="button">Công việc</a>
-                            <a href="#" class="btn btn-primary" role="button">Chi tiết</a>
-                             <a href="#" class="btn btn-danger" role="button" data-toggle="modal" data-target="#confirm-delete">Xóa</a>
+                            <a href="#" class="btn btn-info" role="button" data-toggle="modal" data-target="#myModal">Sửa</a>
+                            <a href="#" class="btn btn-danger" role="button" data-toggle="modal" data-target="#confirm-delete">Xóa</a>
                         </p>
                     </td>
                 </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Nguyễn Thị Mừng</td>
-                    <td>Nhân viên hành chính</td>
-                    <td>Nhân viên</td>
-                    <td>
-                        <p>
-                            <a href="#" class="btn btn-info" role="button">Công việc</a>
-                            <a href="#" class="btn btn-primary" role="button">Chi tiết</a>
-                             <a href="#" class="btn btn-danger" role="button" data-toggle="modal" data-target="#confirm-delete">Xóa</a>
-                        </p>
-                    </td>
-                </tr>
-               <tr>
-                    <td>5</td>
-                    <td>Nguyễn Quốc Bảo</td>
-                    <td>Nhân viên hành chính</td>
-                    <td>Nhân viên</td>
-                    <td>
-                        <p>
-                            <a href="#" class="btn btn-info" role="button">Công việc</a>
-                            <a href="#" class="btn btn-primary" role="button">Chi tiết</a>
-                             <a href="#" class="btn btn-danger" role="button" data-toggle="modal" data-target="#confirm-delete">Xóa</a>
-                        </p>
-                    </td>
-                </tr>
+
 
             </tbody>
         </table>
@@ -194,7 +150,7 @@
 
 
 <div>
-    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Thêm nhân viên</button>
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Thêm chức vụ</button>
 </div>
 
 
@@ -204,17 +160,17 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Thêm nhân viên</h4>
+        <h4 class="modal-title">Chức vụ</h4>
       </div>
       <div class="modal-body">
         <form action="" method="POST" role="form">
             <legend></legend>
 
             <div class="form-group">
-                <label for="">Tên nhân viên</label>
-                <input type="text" class="form-control" id="name" placeholder="Nguyễn Anh Phương">
-                 <label for="">Chức vụ</label>
-                <input type="text" class="form-control" id="description" placeholder="Nhân viên">
+                <label for="">Tên chức vụ</label>
+                <input type="text" class="form-control" id="name" placeholder="Giám đốc">
+                 <label for="">Mô tả</label>
+                <input type="text" class="form-control" id="description" placeholder="Người điều hành công ty">
             </div>
         </form>
       </div>
@@ -233,7 +189,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                Bạn có chắc chắn muốn xóa nhân viên khỏi phòng ban này?
+                Bạn có chắc chắn muốn xóa chức vụ này?
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
@@ -243,6 +199,7 @@
     </div>
 </div>
 <!-- End Modal xoa ban ghi -->
+
 
 <!--wrapper end-->
 </section>
