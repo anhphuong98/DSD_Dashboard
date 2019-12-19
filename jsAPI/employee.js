@@ -79,12 +79,12 @@ function renderEmployees(employees, positions) {
                         <tr>
                             <td>${i}</td>
                             <td>${name}</td>
-                            <td>${des}</td>
+                            <td  class="des-employee">${des}</td>
                             <td>${pos}</td>
                             <td>
                                 <p data-id="${employee._id}">
-                                 <a href="#" class="btn btn-info" role="button">Công việc</a>
-                                 <a href="#" class="btn btn-primary" role="button">Chi tiết</a>
+                                 <a href="#" class="btn btn-primary" role="button"  data-toggle="modal"
+                                 data-target="#detail-employee">Chi tiết</a>
                                  <button class="btn btn-danger"
                                  role="button" data-toggle="modal" data-target="#confirm-delete">Xóa</button>
                              </p>
