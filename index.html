@@ -99,6 +99,7 @@
             <div class="panel-body">
                 <div class="top-stats-panel">
                     <h4 class="widget">Tổng số phòng ban</h4>
+                    <div id="department-count"></div>
                 </div>
             </div>
         </section>
@@ -108,20 +109,21 @@
             <div class="panel-body">
                 <div class="top-stats-panel">
                     <h4 class="widget">Tổng số nhân viên</h4>
+                    <div id="user-count"></div>
                 </div>
             </div>
         </section>
     </div>
-     <div class="col-md-3">
+     <div class="col-md-6">
         <section class="panel">
             <div class="panel-body">
                 <div class="top-stats-panel">
-                    <h4 class="widget">Biểu đồ công việc</h4>
+                    <h4 class="widget">Biểu đồ  đặt vào đây</h4>
                 </div>
             </div>
         </section>
     </div>
-    <div class="col-md-3">
+  <!--   <div class="col-md-3">
         <section class="panel">
             <div class="panel-body">
                 <div class="top-stats-panel">
@@ -138,7 +140,7 @@
                 </div>
             </div>
         </section>
-    </div>
+    </div> -->
 </div>
 <div class="row">
      <div class="col-md-12">
@@ -147,84 +149,7 @@
         </section>
     </div>
 </div>
-<div class="row">
-   <div class="col-3 col-sm-3 col-md-3 col-lg-3">
-        <div class="thumbnail">
-            <h4>Phòng kế toán</h4>
-        <div class="caption">
-            <h5>Trưởng phòng: Đoàn Văn Tiến</h5>
-            <h5>Số lượng nhân viên: 100</h5>
-            <h5>Tiến độ công việc</h5>
-            <div class="progress">
-                <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                <span class="sr-only">40% Complete (success)</span>
-                 </div>
-            </div>
-            <p>
-                <a href="listEmployee.html" class="btn btn-info" role="button">Xem chi tiết</a>
-                <a href="#" class="btn btn-default" role="button" data-toggle="modal" data-target="#myModal">Chỉnh sửa</a>
-            </p>
-        </div>
-        </div>
-    </div>
-   <div class="col-3 col-sm-3 col-md-3 col-lg-3">
-        <div class="thumbnail">
-            <h4>Phòng kế toán</h4>
-        <div class="caption">
-            <h5>Trưởng phòng: Đoàn Văn Tiến</h5>
-            <h5>Số lượng nhân viên: 100</h5>
-            <h5>Tiến độ công việc</h5>
-            <div class="progress">
-                <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                <span class="sr-only">40% Complete (success)</span>
-                 </div>
-            </div>
-            <p>
-                <a href="listEmployee.html" class="btn btn-info" role="button">Xem chi tiết</a>
-                <a href="#" class="btn btn-default" role="button" data-toggle="modal" data-target="#myModal">Chỉnh sửa</a>
-            </p>
-        </div>
-        </div>
-    </div>
-   <div class="col-3 col-sm-3 col-md-3 col-lg-3">
-        <div class="thumbnail">
-            <h4>Phòng kế toán</h4>
-        <div class="caption">
-            <h5>Trưởng phòng: Đoàn Văn Tiến</h5>
-            <h5>Số lượng nhân viên: 100</h5>
-            <h5>Tiến độ công việc</h5>
-            <div class="progress">
-                <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                <span class="sr-only">40% Complete (success)</span>
-                 </div>
-            </div>
-            <p>
-                <a href="listEmployee.html" class="btn btn-info" role="button">Xem chi tiết</a>
-                <a href="#" class="btn btn-default" role="button" data-toggle="modal" data-target="#myModal">Chỉnh sửa</a>
-            </p>
-        </div>
-        </div>
-    </div>
-    <div class="col-3 col-sm-3 col-md-3 col-lg-3">
-        <div class="thumbnail">
-            <h4>Phòng kế toán</h4>
-        <div class="caption">
-            <h5>Trưởng phòng: Đoàn Văn Tiến</h5>
-            <h5>Số lượng nhân viên: 100</h5>
-            <h5>Tiến độ công việc</h5>
-            <div class="progress">
-                <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                <span class="sr-only">40% Complete (success)</span>
-                 </div>
-            </div>
-            <p>
-                <a href="listEmployee.html" class="btn btn-info" role="button">Xem chi tiết</a>
-                <a href="#" class="btn btn-default" role="button" data-toggle="modal" data-target="#myModal">Chỉnh sửa</a>
-            </p>
-        </div>
-        </div>
-    </div>
-
+<div class="row" id="department-collection">
 </div>
 <div>
     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Thêm phòng ban</button>
@@ -285,6 +210,7 @@
 <script src="js/flot-chart/jquery.flot.growraf.js"></script>
 <script src="js/dashboard.js"></script>
 <script src="js/jquery.customSelect.min.js" ></script>
+<script src="jsAPI/index.js"></script>
 
 </body>
 </html>

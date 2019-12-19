@@ -5718,3 +5718,23 @@ right: -1px;
     padding-top: 5px;
     padding-bottom: 5px;
 }
+
+.title-depart {
+    height: 15px;
+    margin-bottom: 10px;
+}
+
+#department-count {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 50px;
+    color: #45B5AD;
+}
+
+#user-count {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 50px;
+    color: #45B5AD;
+}
+
