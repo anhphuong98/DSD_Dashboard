@@ -76,12 +76,6 @@
                         <span>Quản lý chức vụ</span>
                     </a>
                 </li>
-                <li>
-                    <a href="index.html">
-                        <i class="fa fa-repeat"></i>
-                        <span>Xem log</span>
-                    </a>
-                </li>
             </ul>
         </div>
         <!-- sidebar menu end-->
@@ -115,19 +109,19 @@
 
 
 <div>
-    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Thêm chức vụ</button>
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalAdd">Thêm chức vụ</button>
 </div>
 
 
 <!-- Modal thêm nhân viên -->
-<div id="myModal"  class="modal fade " tabindex="-1" role="dialog">
+<div id="myModalAdd"  class="modal fade " tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content ">
          <form action="" method="POST" role="form" class="add-position-form">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 
-                <h4 class="modal-title">Thêm chức vụ</h4>
+                <h4 class="modal-title">Thêm Chức vụ</h4>
               </div>
               <div class="modal-body">
                     <div class="form-group">
@@ -147,6 +141,33 @@
 </div><!-- /.modal -->
 <!-- End Modal chinh sua nhân viên -->
 
+<div id="myModalUpdate"  class="modal fade " tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content ">
+         <form action="" method="POST" role="form" class="update-position-form" id="id-update-position">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+                <h4 class="modal-title">Thêm Chức vụ</h4>
+              </div>
+              <div class="modal-body">
+                    <div class="form-group">
+                        <label for="">Tên chức vụ</label>
+                        <input type="text" class="form-control" name="role_name" id="role_name_update" value="">
+                    <label for="">Mô tả</label>
+                        <input type="text" class="form-control" name="des" id="des_update" value="">
+                    </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+                <input type="submit" value="Lưu" class="btn btn-primary">
+              </div>
+         </form>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
 <!-- Modal xoa ban ghi -->
 
 <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -157,7 +178,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
-                <a class="btn btn-danger btn-ok" id="delete-position">Xóa</a>
+                <a class="btn btn-danger btn-ok" id="id-delete-position">Xóa</a>
             </div>
         </div>
     </div>

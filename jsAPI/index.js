@@ -39,7 +39,7 @@ async function fetchDepartments(){
     });
 }
 
-async function fetchUsers(){
+async function fetchCountUsers(){
     fetch('https://dsd05-dot-my-test-project-252009.appspot.com/user/getUserInfos')
     .then(resp => resp.json())
     .then((users) => {
@@ -49,4 +49,4 @@ async function fetchUsers(){
 }
 
 fetchDepartments();
-fetchUsers();
+fetchCountUsers();
