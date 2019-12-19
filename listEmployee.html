@@ -16,246 +16,233 @@
     <link href="css/clndr.css" rel="stylesheet">
     <!--clock css-->
     <link href="js/css3clock/css/style.css" rel="stylesheet">
-
-
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/style-responsive.css" rel="stylesheet"/>
-</head>
-<body>
-<section id="container">
-<!--header start-->
-<header class="header fixed-top clearfix">
-<!--logo start-->
-<div class="brand">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Alex+Brush" rel="stylesheet">
+    <style>
+        .page {
+            display: none;
+            padding: 0 0.5em;
+        }
 
-    <a href="index.html" class="logo">
-        <!-- <img src="images/logo.png" alt=""> -->
-        Công ty thuốc
-    </a>
-    <div class="sidebar-toggle-box">
-        <div class="fa fa-bars"></div>
-    </div>
+        .page h1 {
+            font-size: 2em;
+            line-height: 1em;
+            margin-top: 1.1em;
+            font-weight: bold;
+        }
+
+        .page p {
+            font-size: 1.5em;
+            line-height: 1.275em;
+            margin-top: 0.15em;
+        }
+
+        #loading {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(192, 192, 192, 0.5);
+            background-image: url("https://i.stack.imgur.com/MnyxU.gif");
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    </style>
+</head>
+<body id="page">
+<div class="page">
 </div>
-<!--logo end-->
-<div class="top-nav clearfix">
-    <ul class="nav pull-right top-menu">
-        <!-- user login dropdown start-->
-        <li class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                <img alt="" src="images/anhphuong.jpg">
-                <span class="username">Nguyễn Anh Phương</span>
-                <b class="caret"></b>
+<div id="loading"></div>
+<section id="container">
+    <!--header start-->
+    <header class="header fixed-top clearfix">
+        <!--logo start-->
+        <div class="brand">
+
+            <a href="index.html" class="logo">
+                <!-- <img src="images/logo.png" alt=""> -->
+                Công ty thuốc
             </a>
-            <ul class="dropdown-menu extended logout">
-                <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
-                <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-                <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
-            </ul>
-        </li>
-        <!-- user login dropdown end -->
-    </ul>
-</div>
-</header>
-<!--header end-->
-<!--sidebar start-->
-<aside>
-    <div id="sidebar" class="nav-collapse">
-        <!-- sidebar menu start-->
-        <div class="leftside-navigation">
-            <ul class="sidebar-menu" id="nav-accordion">
-                <li>
-                    <a class="active" href="index.html">
-                        <i class="fa fa-dashboard"></i>
-                        <span>Tổng quan</span>
+            <div class="sidebar-toggle-box">
+                <div class="fa fa-bars"></div>
+            </div>
+        </div>
+        <!--logo end-->
+        <div class="top-nav clearfix">
+            <ul class="nav pull-right top-menu">
+                <!-- user login dropdown start-->
+                <li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <img alt="" src="images/anhphuong.jpg">
+                        <span class="username">Nguyễn Anh Phương</span>
+                        <b class="caret"></b>
                     </a>
+                    <ul class="dropdown-menu extended logout">
+                        <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
+                        <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
+                        <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
+                    </ul>
                 </li>
-                 <li>
-                    <a href="listPosition.html">
-                        <i class="fa fa-user"></i>
-                        <span>Quản lý chức vụ</span>
-                    </a>
-                </li>
+                <!-- user login dropdown end -->
             </ul>
         </div>
-        <!-- sidebar menu end-->
-    </div>
-</aside>
-<!--sidebar end-->
-<!--main content start-->
-<section id="main-content">
-<section class="wrapper">
+    </header>
+    <!--header end-->
+    <!--sidebar start-->
+    <aside>
+        <div id="sidebar" class="nav-collapse">
+            <!-- sidebar menu start-->
+            <div class="leftside-navigation">
+                <ul class="sidebar-menu" id="nav-accordion">
+                    <li>
+                        <a class="active" href="index.html">
+                            <i class="fa fa-dashboard"></i>
+                            <span>Tổng quan</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="listPosition.html">
+                            <i class="fa fa-user"></i>
+                            <span>Quản lý chức vụ</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="index.html">
+                            <i class="fa fa-repeat"></i>
+                            <span>Xem log</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- sidebar menu end-->
+        </div>
+    </aside>
+    <!--sidebar end-->
+    <!--main content start-->
+    <section id="main-content">
+        <section class="wrapper">
 
-<!--mini statistics start-->
-<div class="row" id="id-depart">
-    <div class="col-md-12">
-        <section class="panel">
-            <div class="panel-body">
-                <div class="top-stats-panel">
-                    <h4 class="widget">Biểu đồ thay đổi phòng ban theo tháng</h4>
+            <!--mini statistics start-->
+            <div class="row">
+                <div class="col-md-12">
+                    <section class="panel">
+                        <div class="panel-body">
+                            <div class="top-stats-panel">
+                                <div id="chartContainer" style="height: 175px; width: 100%;"></div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </div>
+
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h3 class="panel-title" style="text-align: center">Danh sách nhân viên</h3>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th>Tên</th>
+                            <th>Mô tả</th>
+                            <th>Vị trí</th>
+                            <th>Thao tác</th>
+                        </tr>
+                        </thead>
+                        <tbody id="employee-collection">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+            <div>
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Thêm nhân
+                    viên
+                </button>
+            </div>
+            <!-- Modal thêm nhân viên -->
+            <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                    aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">Thêm nhân viên</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form action="" method="POST" role="form" class="add-employee-form">
+                                <legend></legend>
+
+                                <div class="form-group">
+                                    <label for="select_user">User</label>
+                                    <select id="select_user"></select>
+                                    <label for="select_position">Chức vụ</label>
+                                    <select id="select_position"></select>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+                            <button type="button" class="btn btn-primary" id="button_save">Lưu</button>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+            <!-- End Modal chinh sua nhân viên -->
+
+            <!-- Modal xoa ban ghi -->
+
+            <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            Bạn có chắc chắn muốn xóa nhân viên khỏi phòng ban này?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+                            <a class="btn btn-danger btn-ok" id="id-delete-position">Xóa</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Modal xoa ban ghi -->
+            <!--wrapper end-->
         </section>
-    </div>
-</div>
+        <!-- main conten end-->
+    </section>
+    <!-- Placed js at the end of the document so the pages load faster -->
+    <!--Core js-->
 
-<div class="panel panel-success">
-    <div class="panel-heading">
-        <h3 class="panel-title" style="text-align: center">Danh sách nhân viên</h3>
-    </div>
-    <div class="panel-body">
-         <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th>STT</th>
-                    <th>Tên</th>
-                    <th>Mô tả</th>
-                    <th>Vị trí</th>
-                    <th>Thao tác</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Nguyễn Anh Phương</td>
-                    <td>Nhân viên hành chính</td>
-                    <td>Nhân viên</td>
-                    <td>
-                        <p>
-                            <a href="#" class="btn btn-info" role="button">Công việc</a>
-                            <a href="#" class="btn btn-primary" role="button">Chi tiết</a>
-                             <a href="#" class="btn btn-danger" role="button" data-toggle="modal" data-target="#confirm-delete">Xóa</a>
-                        </p>
-                    </td>
-                </tr>
-               <tr>
-                    <td>2</td>
-                    <td>Đoàn Văn Tiến</td>
-                    <td>Nhân viên hành chính</td>
-                    <td>Nhân viên</td>
-                    <td>
-                        <p>
-                            <a href="#" class="btn btn-info" role="button">Công việc</a>
-                            <a href="#" class="btn btn-primary" role="button">Chi tiết</a>
-                             <a href="#" class="btn btn-danger" role="button" data-toggle="modal" data-target="#confirm-delete">Xóa</a>
-                        </p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Nguyễn Văn Đạt</td>
-                    <td>Nhân viên hành chính</td>
-                    <td>Nhân viên</td>
-                    <td>
-                        <p>
-                            <a href="#" class="btn btn-info" role="button">Công việc</a>
-                            <a href="#" class="btn btn-primary" role="button">Chi tiết</a>
-                             <a href="#" class="btn btn-danger" role="button" data-toggle="modal" data-target="#confirm-delete">Xóa</a>
-                        </p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Nguyễn Thị Mừng</td>
-                    <td>Nhân viên hành chính</td>
-                    <td>Nhân viên</td>
-                    <td>
-                        <p>
-                            <a href="#" class="btn btn-info" role="button">Công việc</a>
-                            <a href="#" class="btn btn-primary" role="button">Chi tiết</a>
-                             <a href="#" class="btn btn-danger" role="button" data-toggle="modal" data-target="#confirm-delete">Xóa</a>
-                        </p>
-                    </td>
-                </tr>
-               <tr>
-                    <td>5</td>
-                    <td>Nguyễn Quốc Bảo</td>
-                    <td>Nhân viên hành chính</td>
-                    <td>Nhân viên</td>
-                    <td>
-                        <p>
-                            <a href="#" class="btn btn-info" role="button">Công việc</a>
-                            <a href="#" class="btn btn-primary" role="button">Chi tiết</a>
-                             <a href="#" class="btn btn-danger" role="button" data-toggle="modal" data-target="#confirm-delete">Xóa</a>
-                        </p>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
-    </div>
-</div>
+    <script src="bs3/js/bootstrap.min.js"></script>
 
 
-<div>
-    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Thêm nhân viên</button>
-</div>
-
-
-<!-- Modal thêm nhân viên -->
-<div id="myModal"  class="modal fade" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Thêm nhân viên</h4>
-      </div>
-      <div class="modal-body">
-        <form action="" method="POST" role="form">
-            <legend></legend>
-
-            <div class="form-group">
-                <label for="">Tên nhân viên</label>
-                <input type="text" class="form-control" id="name" placeholder="Nguyễn Anh Phương">
-                 <label for="">Chức vụ</label>
-                <input type="text" class="form-control" id="description" placeholder="Nhân viên">
-            </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
-        <button type="button" class="btn btn-primary">Lưu</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-<!-- End Modal chinh sua nhân viên -->
-
-<!-- Modal xoa ban ghi -->
-
-<div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body">
-                Bạn có chắc chắn muốn xóa nhân viên khỏi phòng ban này?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
-                <a class="btn btn-danger btn-ok">Xóa</a>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Modal xoa ban ghi -->
-
-<!--wrapper end-->
-</section>
-<!-- main conten end-->
-</section>
-</section>
-<!-- Placed js at the end of the document so the pages load faster -->
-<!--Core js-->
-<script src="js/jquery.js"></script>
-
-<script src="bs3/js/bootstrap.min.js"></script>
-
-
-
-<!--jQuery Flot Chart-->
-<script src="js/dashboard.js"></script>
-<script src="js/jquery.customSelect.min.js" ></script>
-<!-- <script src="jsAPI/index.js"></script> -->
-<script src="jsAPI/employee.js"></script>
-
+    <!--jQuery Flot Chart-->
+    <script src="js/jquery.js"></script>
+    <script src="js/flot-chart/jquery.flot.js"></script>
+    <script src="js/flot-chart/jquery.flot.tooltip.min.js"></script>
+    <script src="js/flot-chart/jquery.flot.resize.js"></script>
+    <script src="js/flot-chart/jquery.flot.pie.resize.js"></script>
+    <script src="js/flot-chart/jquery.flot.animator.min.js"></script>
+    <script src="js/flot-chart/jquery.flot.growraf.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/jquery.customSelect.min.js"></script>
+    <script src="jsAPI/employee.js"></script>
+    <script src="js/jquery.js"></script>
+    <script type="text/javascript" src="jsAPI/chart.js"></script>
+    <script src="js/canvasjs-2.3.2/canvasjs.min.js"></script>
+    <script src="jsAPI/chart.js" type="javascript"></script>
+    <script>
+        drawChart("https://dsd15-log.azurewebsites.net/Logs/change/?depart=" + sessionStorage.getItem("id_department"),
+            "Số lượng nhân viên phòng ban");
+    </script>
 </body>
 </html>
