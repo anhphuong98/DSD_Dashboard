@@ -28,7 +28,7 @@ function renderDepartments(departments){
                             <h5>${department.depart_des}</h5>
                         </div>
                         <p data-id=${department._id}>
-                            <a href="listEmployee.html" class="btn btn-info" role="button">Xem chi tiết</a>
+                            <a href="listEmployee.html" class="btn btn-info" role="button" value="${department.depart_id}">Xem chi tiết</a>
                             <a class="update-depart btn btn-default" role="button" data-toggle="modal" data-target="#myModalUpdate">Chỉnh sửa</a>
                             <a class="delete-depart btn btn-danger" role="button" data-toggle="modal" data-target="#confirm-delete">Xóa</a>
                         </p>
@@ -72,6 +72,7 @@ departmentCollection.addEventListener('click', function(event){
     let updateDepart = (event.target.className === "update-depart btn btn-default");
     let deleteDepart = (event.target.className === "delete-depart btn btn-danger");
     let id = event.target.parentElement.dataset.id;
+    console.log(id);
     if(updateDepart){
         fetch(`https://dsd15-log.azurewebsites.net/Departments/${id}?member`)
         .then(resp => resp.json())
