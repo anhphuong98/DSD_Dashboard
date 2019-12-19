@@ -1,18 +1,15 @@
-
 const departmentCollection = document.getElementById('department-collection');
 const departmentCount = document.getElementById('department-count');
 const userCount = document.getElementById('user-count');
 
 
-
-
-function fetchDepartments(){
-  fetch('https://dsd15-log.azurewebsites.net/Departments/getall/?member')
-  .then(resp => resp.json())
-  .then(renderDepartments)
+function fetchDepartments() {
+    fetch('https://dsd15-log.azurewebsites.net/Departments/getall/?member')
+        .then(resp => resp.json())
+        .then(renderDepartments)
 }
 
-function renderDepartments(departments){
+function renderDepartments(departments) {
     departmentCount.innerHTML = "";
     departmentCount.innerHTML += departments.length;
     departmentCollection.innerHTML = "";
@@ -69,47 +66,49 @@ function renderDepartments(departments){
 
     });
     })
-
-
-
 }
+
 const addDepartForm = document.querySelector('.add-depart-form');
 addDepartForm.addEventListener('submit', function (event) {
     event.preventDefault();
     fetch(`https://dsd15-log.azurewebsites.net//Departments/?member`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      depart_name: `${event.target.depart_name.value}`,
-      depart_des: `${event.target.depart_des.value}`,
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            depart_name: `${event.target.depart_name.value}`,
+            depart_des: `${event.target.depart_des.value}`,
+        })
     })
-  })
-    .then(resp => resp.json)
-    .then(() => {
-        location.reload();
-    })
+        .then(resp => resp.json)
+        .then(() => {
+            location.reload();
+        })
 });
 
 
-
-departmentCollection.addEventListener('click', function(event){
+departmentCollection.addEventListener('click', function (event) {
     let updateDepart = (event.target.className === "update-depart btn btn-default");
     let deleteDepart = (event.target.className === "delete-depart btn btn-danger");
     let detailDepart = (event.target.className === "detail-depart btn btn-info");
     let id = event.target.parentElement.dataset.id;
-    if(updateDepart){
-        fetch(`https://dsd15-log.azurewebsites.net/Departments/${id}?member`)
-        .then(resp => resp.json())
-        .then((depart) => {
-            document.getElementById('depart_name_update').value = depart.depart_name;
-            document.getElementById('depart_des_update').value = depart.depart_des;
-            document.getElementById('id-update-depart').value = id;
-        });
+    if (id !== undefined && detailDepart) {
+        sessionStorage.setItem("id_department", id);
+        window.location.href = "listEmployee.html";
     }
-    if(deleteDepart){
-            document.getElementById('id-delete-depart').value = id;
+    console.log(id);
+    if (updateDepart) {
+        fetch(`https://dsd15-log.azurewebsites.net/Departments/${id}?member`)
+            .then(resp => resp.json())
+            .then((depart) => {
+                document.getElementById('depart_name_update').value = depart.depart_name;
+                document.getElementById('depart_des_update').value = depart.depart_des;
+                document.getElementById('id-update-depart').value = id;
+            });
+    }
+    if (deleteDepart) {
+        document.getElementById('id-delete-depart').value = id;
     }
     if(detailDepart){
             sessionStorage.setItem("id_department", id);
@@ -123,32 +122,30 @@ updateDepartForm.addEventListener('submit', function (event) {
     id = event.target.value;
     event.preventDefault();
     fetch(`https://dsd15-log.azurewebsites.net/Departments/update/?id=${id}&member=`, {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      depart_name: `${event.target.depart_name.value}`,
-      depart_des: `${event.target.depart_des.value}`,
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            depart_name: `${event.target.depart_name.value}`,
+            depart_des: `${event.target.depart_des.value}`,
+        })
     })
-  })
-    .then(() => {
-        location.reload();
-    });
+        .then(() => {
+            location.reload();
+        });
 });
 
 
 const deleteDepart = document.getElementById('id-delete-depart');
-deleteDepart.addEventListener('click', function(event) {
+deleteDepart.addEventListener('click', function (event) {
     id = event.target.value;
     fetch(`https://dsd15-log.azurewebsites.net/Departments/${id}?member=`, {
-      method: 'DELETE'
+        method: 'DELETE'
     })
-    .then(() => {
-        location.reload();
-    })
+        .then(() => {
+            location.reload();
+        })
 });
 
 fetchDepartments();
-
-
