@@ -16,27 +16,60 @@ function renderDepartments(departments){
     departmentCount.innerHTML = "";
     departmentCount.innerHTML += departments.length;
     departmentCollection.innerHTML = "";
-    departments.forEach(function (department) {
-        departmentCollection.innerHTML += `
-            <div class="col-4 col-sm-4 col-md-4 col-lg-4">
-                <div class="thumbnail">
-                    <div class="title-depart">
-                    <h4>${department.depart_name}</h4>
-                    </div>
-                    <div class="caption">
-                        <div class ="content-depart">
-                            <h5>${department.depart_des}</h5>
+    fetch('https://dsd05-dot-my-test-project-252009.appspot.com/user/getUserInfos')
+    .then(resp => resp.json())
+    .then((users) => {
+        departments.forEach(function (department) {
+        let id = department._id;
+        console.log(id);
+        $.ajax({
+            type: "GET",
+            url: `https://dsd15-log.azurewebsites.net/Members/namemanager/?depart=${id}`,
+            success: function (data) {
+                fetch(`https://dsd15-log.azurewebsites.net/Members/departments/${id}`)
+                .then(resp => resp.json())
+                .then((result) => {
+                        var count = result.length*100/users.length;
+                        departmentCollection.innerHTML += `
+                        <div class="col-4 col-sm-4 col-md-4 col-lg-4">
+                            <div class="thumbnail">
+                                <div class="title-depart">
+                                <h4>${department.depart_name}</h4>
+                                </div>
+                                <div class="caption">
+                                    <div class ="content-depart">
+                                        <h5>Email TP: ${data}</h5>
+                                        <h5>Số lượng nhân viên: ${result.length}</h5>
+                                        <h5>Tỷ lệ nhân viên</h5>
+                                        <div class="progress">
+                                            <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: ${count}%">
+                                            <span class="sr-only">40% Complete (success)</span>
+                                        </div>
+                                    </div>
+
+                                    </div>
+                                    <p data-id=${department._id}>
+                                        <a class="detail-depart btn btn-info" role="button">Xem chi tiết</a>
+                                        <a class="update-depart btn btn-default" role="button" data-toggle="modal" data-target="#myModalUpdate">Chỉnh sửa</a>
+                                        <a class="delete-depart btn btn-danger" role="button" data-toggle="modal" data-target="#confirm-delete">Xóa</a>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        <p data-id=${department._id}>
-                            <a href="listEmployee.html" class="btn btn-info" role="button" value="${department.depart_id}">Xem chi tiết</a>
-                            <a class="update-depart btn btn-default" role="button" data-toggle="modal" data-target="#myModalUpdate">Chỉnh sửa</a>
-                            <a class="delete-depart btn btn-danger" role="button" data-toggle="modal" data-target="#confirm-delete">Xóa</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        `
+                    `
+
+                });
+            },
+            error: function (error) {
+                console.log(error);
+            }
         });
+
+    });
+    })
+
+
+
 }
 
 function fetchCountUsers(){
@@ -71,8 +104,8 @@ addDepartForm.addEventListener('submit', function (event) {
 departmentCollection.addEventListener('click', function(event){
     let updateDepart = (event.target.className === "update-depart btn btn-default");
     let deleteDepart = (event.target.className === "delete-depart btn btn-danger");
+    let detailDepart = (event.target.className === "detail-depart btn btn-info");
     let id = event.target.parentElement.dataset.id;
-    console.log(id);
     if(updateDepart){
         fetch(`https://dsd15-log.azurewebsites.net/Departments/${id}?member`)
         .then(resp => resp.json())
@@ -84,6 +117,10 @@ departmentCollection.addEventListener('click', function(event){
     }
     if(deleteDepart){
             document.getElementById('id-delete-depart').value = id;
+    }
+    if(detailDepart){
+            sessionStorage.setItem("id_department", id);
+            window.location.href = "listEmployee.html";
     }
 });
 
@@ -120,6 +157,9 @@ deleteDepart.addEventListener('click', function(event) {
 });
 
 
+// function myfunction(value){
+//     console.log(value);
+// }
 
 
 fetchDepartments();
@@ -127,11 +167,3 @@ fetchCountUsers();
 
 
 
-// <h5>Trưởng phòng: Nguyễn Anh Phương</h5>
-//                         <h5>Số lượng nhân viên: 100</h5>
-//                         <h5>Phần trăm nhân viên</h5>
-//                         <div class="progress">
-//                             <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-//                             <span class="sr-only">40% Complete (success)</span>
-//                              </div>
-//                         </div>
