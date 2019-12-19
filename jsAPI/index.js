@@ -19,6 +19,8 @@ function renderDepartments(departments){
     fetch('https://dsd05-dot-my-test-project-252009.appspot.com/user/getUserInfos')
     .then(resp => resp.json())
     .then((users) => {
+        userCount.innerHTML = "";
+        userCount.innerHTML += users.length;
         departments.forEach(function (department) {
         let id = department._id;
         console.log(id);
@@ -70,15 +72,6 @@ function renderDepartments(departments){
 
 
 
-}
-
-function fetchCountUsers(){
-    fetch('https://dsd05-dot-my-test-project-252009.appspot.com/user/getUserInfos')
-    .then(resp => resp.json())
-    .then((users) => {
-        userCount.innerHTML = "";
-        userCount.innerHTML += users.length;
-    })
 }
 const addDepartForm = document.querySelector('.add-depart-form');
 addDepartForm.addEventListener('submit', function (event) {
@@ -156,14 +149,6 @@ deleteDepart.addEventListener('click', function(event) {
     })
 });
 
-
-// function myfunction(value){
-//     console.log(value);
-// }
-
-
 fetchDepartments();
-fetchCountUsers();
-
 
 
