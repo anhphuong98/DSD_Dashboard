@@ -221,7 +221,7 @@
     </section>
     <!-- Placed js at the end of the document so the pages load faster -->
     <!--Core js-->
-
+    <script src="js/jquery.js"></script>
     <script src="bs3/js/bootstrap.min.js"></script>
 
 
@@ -241,7 +241,7 @@
     <script src="js/canvasjs-2.3.2/canvasjs.min.js"></script>
     <script src="jsAPI/chart.js" type="javascript"></script>
     <script>
-        drawChart("https://dsd15-log.azurewebsites.net/Logs/change/?depart=" + sessionStorage.getItem("id_department"),
+        drawChart("https://dsd15-log.azurewebsites.net/Logs/totalchange/?depart=" + sessionStorage.getItem("id_department"),
             "Số lượng nhân viên phòng ban");
     </script>
 </body>
