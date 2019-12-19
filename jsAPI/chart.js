@@ -10,7 +10,7 @@ $.ajax({
             exportEnabled: true,
             theme: "light1", // "light1", "light2", "dark1", "dark2"
             title: {
-                text: "Statistics of employees by month"
+                text: "Số lượng nhân viên công ty từng tháng"
             },
             data: [{
                 type: "column", //change type to bar, line, area, pie, etc
