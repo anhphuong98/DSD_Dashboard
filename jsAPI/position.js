@@ -41,7 +41,6 @@ addPositionForm.addEventListener('submit', function (event) {
       des: `${event.target.des.value}`,
     })
   })
-    .then(resp => resp.json)
     .then(() => {
         location.reload();
     })
@@ -84,9 +83,8 @@ updatePositionForm.addEventListener('submit', function (event) {
       des: `${event.target.des.value}`,
     })
   })
-    .then(resp => resp.json())
     .then(() => {
-        console.log("dasua")
+        location.reload();
     });
 });
 
@@ -98,9 +96,8 @@ deletePosition.addEventListener('click', function(event) {
     fetch(`https://dsd15-log.azurewebsites.net/Positions/${id}`, {
       method: 'DELETE'
     })
-    .then(response => response.json())
     .then(() => {
-        console.log("Daxoa");
+        location.reload();
     })
 });
 

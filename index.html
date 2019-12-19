@@ -146,37 +146,92 @@
 <div class="row" id="department-collection">
 </div>
 <div>
-    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Thêm phòng ban</button>
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalAdd">Thêm phòng ban</button>
 </div>
 
 
-<!-- Modal chinh sua phong ban -->
-<div id="myModal"  class="modal fade" tabindex="-1" role="dialog">
+<!-- Modal them phong ban -->
+<div id="myModalAdd"  class="modal fade" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Phòng hành chính</h4>
-      </div>
-      <div class="modal-body">
-        <form action="" method="POST" role="form">
-            <legend></legend>
-            <div class="form-group">
-                <label for="">Tên phòng ban</label>
-                <input type="text" class="form-control" id="name" placeholder="Tài chính">
-                 <label for="">Mô tả</label>
-                <input type="text" class="form-control" id="description" placeholder="Thống kê doanh thu">
-            </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
-        <button type="button" class="btn btn-primary">Lưu</button>
-      </div>
+          <form action="" method="POST" role="form" class="add-depart-form">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Thêm phòng ban</h4>
+              </div>
+              <div class="modal-body">
+
+                    <legend></legend>
+                    <div class="form-group">
+                        <label for="">Tên phòng ban</label>
+                        <input type="text" class="form-control" name="depart_name" placeholder="Tài chính">
+                         <label for="">Mô tả</label>
+                        <input type="text" class="form-control" name="depart_des"  placeholder="Thống kê doanh thu">
+                    </div>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+                <input type="submit" value="Thêm" class="btn btn-primary">
+              </div>
+       </form>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- End Modal them phong ban -->
+
+
+
+
+
+<!-- Modal chinh sua phong ban -->
+<div id="myModalUpdate"  class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+          <form action="" method="POST" role="form" class="update-depart-form" id="id-update-depart">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Chỉnh sửa phòng ban</h4>
+              </div>
+              <div class="modal-body">
+
+                    <legend></legend>
+                    <div class="form-group">
+                        <label for="">Tên phòng ban</label>
+                        <input type="text" class="form-control" name="depart_name" id="depart_name_update" placeholder="Tài chính">
+                         <label for="">Mô tả</label>
+                        <input type="text" class="form-control" name="depart_des"  id="depart_des_update" placeholder="Thống kê doanh thu">
+                    </div>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+                <input type="submit" value="Cập nhật" class="btn btn-primary">
+              </div>
+       </form>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 <!-- End Modal chinh sua phong ban -->
+
+
+<!-- Modal xoa ban ghi -->
+
+<div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                Bạn có chắc chắn muốn phòng ban này?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+                <a class="btn btn-danger btn-ok" id="id-delete-depart">Xóa</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Modal xoa ban ghi -->
+
 
 
 
